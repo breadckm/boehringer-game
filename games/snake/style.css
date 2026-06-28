@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #0f1320; color: #e7ecf5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+  display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+}
+header {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 0.8rem 1.2rem; border-bottom: 1px solid #2c3450; background: #1a2032;
+}
+header a { color: #8a94ad; text-decoration: none; font-size: 0.9rem; }
+header .title { font-weight: 800; }
+.hud { display: flex; gap: 1.4rem; margin: 1rem 0 0.6rem; font-size: 0.95rem; }
+.hud b { color: #36d399; }
+#players { color: #8a94ad; font-size: 0.85rem; margin-bottom: 0.4rem; }
+canvas {
+  background: #141a2b; border: 1px solid #2c3450; border-radius: 0.6rem;
+  touch-action: none; max-width: 92vw; max-height: 70vh;
+}
+.hint { color: #8a94ad; font-size: 0.82rem; margin-top: 0.8rem; text-align: center; }
+.overlay {
+  position: fixed; inset: 0; background: rgba(10,13,22,0.82);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+}
+.overlay.hidden { display: none; }
+.overlay h2 { margin: 0; }
+.btn {
+  cursor: pointer; border: none; background: #5b8cff; color: #fff;
+  padding: 0.7rem 1.4rem; border-radius: 0.6rem; font-size: 1rem; font-weight: 700;
+}

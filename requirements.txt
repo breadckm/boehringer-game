@@ -1,0 +1,5 @@
+python-fasthtml
+uvicorn
+python-dotenv
+supabase
+httpx

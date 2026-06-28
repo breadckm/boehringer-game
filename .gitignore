@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.env.local
+!.env.example
+.venv/
+venv/
+
+# keys / credentials
+*.key
+*-service-account.json
+*credentials*.json
+
+.idea/
+.vscode/
+.DS_Store

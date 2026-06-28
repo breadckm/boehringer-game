@@ -1,0 +1,8 @@
+{
+  "id": "snake",
+  "title": "스네이크 (멀티플레이어)",
+  "desc": "음식을 먹어 길어지는 뱀. 같은 방에 접속한 친구들의 뱀이 실시간으로 함께 움직입니다.",
+  "multiplayer": true,
+  "order": 1,
+  "thumbnail": ""
+}

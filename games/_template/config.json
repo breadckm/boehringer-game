@@ -1,0 +1,8 @@
+{
+  "id": "__GAME_ID__",
+  "title": "__GAME_ID__",
+  "desc": "새 게임 설명을 여기에 적으세요.",
+  "multiplayer": false,
+  "order": 100,
+  "thumbnail": ""
+}

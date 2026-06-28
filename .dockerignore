@@ -1,0 +1,11 @@
+.git/
+.venv/
+__pycache__/
+*.py[cod]
+
+# 로컬 환경 변수 — Cloud Run은 콘솔/배포 시 직접 주입
+.env
+.env.local
+
+*-service-account.json
+.DS_Store

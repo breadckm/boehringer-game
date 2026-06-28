@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>__GAME_ID__</title>
+  <link rel="stylesheet" href="/games/__GAME_ID__/style.css">
+  <!-- supabase-js + window.GAME + gamekit.js 는 서버가 자동으로 넣어줍니다. -->
+</head>
+<body>
+  <header>
+    <a href="/">← 로비</a>
+    <span class="title">__GAME_ID__</span>
+    <a href="/leaderboard/__GAME_ID__">🏆 리더보드</a>
+  </header>
+
+  <main id="app">
+    <p class="hint">여기서부터 만드세요. <b>game.js</b> 를 편집하면 됩니다.</p>
+    <button id="score-btn" class="btn">클릭하면 +10점</button>
+    <p>점수: <b id="score">0</b></p>
+  </main>
+
+  <script src="/games/__GAME_ID__/game.js"></script>
+</body>
+</html>

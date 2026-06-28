@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>스네이크</title>
+  <link rel="stylesheet" href="/games/snake/style.css">
+  <!-- window.GAME (Supabase 클라이언트·유저·saveScore)는 서버가 여기에 주입합니다. -->
+</head>
+<body>
+  <header>
+    <a href="/">← 로비</a>
+    <span class="title">🐍 스네이크</span>
+    <a href="/leaderboard/snake">🏆 리더보드</a>
+  </header>
+
+  <div class="hud">
+    <span>점수 <b id="score">0</b></span>
+    <span>최고 <b id="best">0</b></span>
+  </div>
+  <div id="players">접속 중…</div>
+
+  <canvas id="board" width="450" height="450"></canvas>
+
+  <p class="hint">방향키 또는 화면을 스와이프해서 조작 · 음식(●)을 먹으면 길어집니다</p>
+
+  <div class="overlay" id="overlay">
+    <h2 id="overlay-title">스네이크 멀티플레이어</h2>
+    <p id="overlay-msg">같은 방의 친구들과 함께 플레이하세요.</p>
+    <button class="btn" id="start-btn">시작하기</button>
+  </div>
+
+  <script src="/games/snake/game.js"></script>
+</body>
+</html>
