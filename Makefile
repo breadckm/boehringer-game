@@ -1,7 +1,9 @@
-IMAGE = asia-northeast3-docker.pkg.dev/boehringer-game-260621/boehringer-repo/boehringer-game:latest
-SERVICE = boehringer-game
-REGION = asia-northeast1
-PROJECT = boehringer-game-260621
+IMAGE            = asia-northeast3-docker.pkg.dev/boehringer-game-260621/boehringer-repo/boehringer-game:latest
+SERVICE          = boehringer-game
+REGION           = asia-northeast1
+PROJECT          = boehringer-game-260621
+PROD_URL         = https://boehringer-game-663515997393.asia-northeast1.run.app
+SCHEDULER_JOB    = boehringer-game-warmup
 
 dev:
 	.venv/bin/uvicorn main:app --reload --port 8000
@@ -20,3 +22,19 @@ deploy:
 	docker build --platform linux/amd64 -t $(IMAGE) .
 	docker push $(IMAGE)
 	gcloud run deploy $(SERVICE) --image=$(IMAGE) --region=$(REGION) --project=$(PROJECT) --allow-unauthenticated
+
+scheduler-create:
+	gcloud scheduler jobs create http $(SCHEDULER_JOB) \
+		--location=$(REGION) \
+		--schedule="*/5 * * * *" \
+		--uri=$(PROD_URL)/ping \
+		--http-method=GET \
+		--time-zone="Asia/Seoul" \
+		--description="Cloud Run 웜 스타트 유지 — 5분 주기로 /ping 호출" \
+		--project=$(PROJECT)
+
+scheduler-delete:
+	gcloud scheduler jobs delete $(SCHEDULER_JOB) --location=$(REGION) --project=$(PROJECT)
+
+scheduler-status:
+	gcloud scheduler jobs describe $(SCHEDULER_JOB) --location=$(REGION) --project=$(PROJECT)

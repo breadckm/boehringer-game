@@ -58,6 +58,11 @@ def _game_card(g: dict):
     )
 
 
+@rt("/ping")
+def ping():
+    return "pong"
+
+
 @rt("/")
 def index(req, session):
     user = get_current_user(session)
